@@ -1,0 +1,84 @@
+.section-container {
+  margin-top: 30px;
+  padding: 20px;
+  background: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.section-header button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.shared-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.shared-table th,
+.shared-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.shared-table th {
+  background-color: #f4f4f4;
+}
+
+.shared-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.form-container {
+  margin-bottom: 20px;
+  background: #fdfdfd;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.form-container input,
+.form-container select {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel-btn {
+  background-color: #aaa;
+  color: white;
+}

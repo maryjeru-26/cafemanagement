@@ -1,0 +1,306 @@
+/* Enhanced Cart Page Styling */
+.cart-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cart-page h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #667eea;
+}
+
+/* Cart Table */
+.cart-page table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 30px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.cart-page th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 18px 15px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cart-page td {
+  padding: 20px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.cart-page tr:last-child td {
+  border-bottom: none;
+}
+
+.cart-page tbody tr {
+  transition: all 0.3s ease;
+}
+
+.cart-page tbody tr:hover {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  transform: scale(1.01);
+}
+
+/* Item Name Column */
+.cart-page td:first-child {
+  font-weight: 700;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+/* Price Column */
+.cart-page td.cart-price {
+  color: #27ae60;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+/* Quantity Controls */
+.cart-page .quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.cart-page .quantity-controls button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #667eea;
+  background: white;
+  color: #667eea;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-page .quantity-controls button:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: scale(1.1);
+}
+
+.cart-page .quantity-controls span {
+  font-weight: 700;
+  font-size: 1.1rem;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Action Buttons */
+.cart-page button.remove-btn {
+  padding: 8px 18px;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.cart-page button.remove-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+/* Cart Summary */
+.cart-summary {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.cart-summary h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.cart-summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 1rem;
+}
+
+.cart-summary-item:last-child {
+  border-bottom: none;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #27ae60;
+  padding-top: 20px;
+  margin-top: 10px;
+  border-top: 2px solid #667eea;
+}
+
+/* Checkout Button */
+.checkout-btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(39, 174, 96, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.checkout-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+}
+
+/* Place Order Button (cart summary) */
+.place-order-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 24px rgba(238, 90, 111, 0.2);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+.place-order-btn:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 36px rgba(238, 90, 111, 0.28);
+}
+
+.place-order-btn:active {
+  transform: translateY(-1px) scale(0.995);
+}
+
+.place-order-btn:focus {
+  outline: 3px solid rgba(255, 107, 107, 0.18);
+  outline-offset: 3px;
+}
+
+.place-order-btn[disabled], .place-order-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Empty Cart */
+.cart-empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: #95a5a6;
+  font-size: 1.2rem;
+}
+
+.cart-empty::before {
+  content: "🛒";
+  display: block;
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+
+.cart-empty h3 {
+  color: #7f8c8d;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.cart-empty p {
+  color: #95a5a6;
+  font-size: 1rem;
+}
+
+/* Continue Shopping Button */
+.continue-shopping-btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.continue-shopping-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cart-page table {
+    font-size: 0.9rem;
+  }
+
+  .cart-page th,
+  .cart-page td {
+    padding: 12px 8px;
+  }
+
+  .cart-page td:first-child {
+    font-size: 1rem;
+  }
+
+  .quantity-controls {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .cart-summary {
+    padding: 20px;
+  }
+
+  .checkout-btn {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-page table {
+    display: block;
+    overflow-x: auto;
+  }
+}
