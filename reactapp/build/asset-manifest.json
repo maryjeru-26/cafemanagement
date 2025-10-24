@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2b5ac4fa.css",
+    "main.js": "/static/js/main.e34f6a05.js",
+    "static/media/hero2.jpg": "/static/media/hero2.5d21d9a90a4a749b76c5.jpg",
+    "static/media/hero3.jpg": "/static/media/hero3.29e4f817c8c941cb6f28.jpg",
+    "static/media/hero6.jpg": "/static/media/hero6.305597feced7e7356892.jpg",
+    "static/media/hero4.jpg": "/static/media/hero4.6f0530c83b63c1de8d6d.jpg",
+    "static/media/hero1.jpg": "/static/media/hero1.150b5d8959638444926e.jpg",
+    "static/media/hero7.jpg": "/static/media/hero7.8643ddcb84215c80daf5.jpg",
+    "static/media/chocolateCake.jpg": "/static/media/chocolateCake.419727b8c321698e6635.jpg",
+    "static/media/promo1.jpg": "/static/media/promo1.14bfc8697c3040717e83.jpg",
+    "static/media/pastaAlfredo.jpg": "/static/media/pastaAlfredo.9aaae5ec1db56e153837.jpg",
+    "static/media/cappuccino.jpg": "/static/media/cappuccino.7c5e00f21e7afecee5b6.jpg",
+    "static/media/hero5.jpg": "/static/media/hero5.198d5776e9ac0ae57cd5.jpg",
+    "static/media/vegSandwich.jpg": "/static/media/vegSandwich.3063b299a66ee7a3ebec.jpg",
+    "static/media/promo3.jpg": "/static/media/promo3.379c70bc109e26ffb460.jpg",
+    "static/media/promo2.jpg": "/static/media/promo2.85f41710e3c663e2c419.jpg",
+    "index.html": "/index.html",
+    "main.2b5ac4fa.css.map": "/static/css/main.2b5ac4fa.css.map",
+    "main.e34f6a05.js.map": "/static/js/main.e34f6a05.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2b5ac4fa.css",
+    "static/js/main.e34f6a05.js"
+  ]
+}

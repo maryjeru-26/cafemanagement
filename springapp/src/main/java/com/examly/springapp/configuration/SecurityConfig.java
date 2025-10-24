@@ -101,7 +101,7 @@ public class SecurityConfig {
         CorsConfiguration cfg = new CorsConfiguration();
         cfg.setAllowedOrigins(List.of(
             "https://8081-fddecedccde329052728bccfaccecftwo.premiumproject.examly.io",
-            "http://localhost:8081"
+            "http://localhost:8081","https://cafemanagement-2603.web.app"
         ));
         cfg.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         cfg.setAllowedHeaders(List.of("*"));
