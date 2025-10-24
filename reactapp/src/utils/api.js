@@ -3,7 +3,7 @@
  * Base URL: http://localhost:8080
  */
 
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = "https://cafemanagement-production-3f70.up.railway.app";
 
 /**
  * Get JWT token from localStorage
