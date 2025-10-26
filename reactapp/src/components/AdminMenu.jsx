@@ -375,8 +375,8 @@ const AdminMenu = () => {
                 <strong>{item.itemName}</strong> ({item.category}) - ₹{item.price} {item.available ? "" : "(Unavailable)"}
               </div>
               <div className="menu-actions">
-                <button onClick={() => handleEdit(item)}>Edit</button>
-                <button onClick={() => handleDelete(item)}>Delete</button>
+                <button className="edit-btn" onClick={() => handleEdit(item)}>Edit</button>
+                <button className="delete-btn" onClick={() => handleDelete(item)}>Delete</button>
               </div>
             </div>
           ))

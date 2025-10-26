@@ -477,7 +477,7 @@
   font-size: 1.8rem;
   margin-bottom: 25px;
   padding-bottom: 15px;
-  border-bottom: 3px solid #ff6b6b;
+  border-bottom: 3px solid #6c7a89;
   font-weight: 700;
 }
 
@@ -491,19 +491,20 @@
 
 .action-btn {
   padding: 12px 24px;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  /* changed to red gradient to match admin theme */
+  background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.25);
 }
 
 .action-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 8px 25px rgba(201, 42, 42, 0.45);
 }
 
 /* Responsive Design */

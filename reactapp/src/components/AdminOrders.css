@@ -220,6 +220,31 @@
   transform: translateY(0);
 }
 
+/* View Items Button (red) */
+.btn-view-items {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #e53935 0%, #c62828 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 12px rgba(229, 57, 53, 0.25);
+}
+
+.btn-view-items:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(198, 40, 40, 0.35);
+}
+
+.btn-view-items:active {
+  transform: translateY(0);
+}
+
 /* Empty State */
 .empty-state {
   text-align: center;

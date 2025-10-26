@@ -22,6 +22,8 @@ const AdminDashboard = () => {
     reservations: { value: "0", change: "+0%", positive: false },
   });
   const [popularItems, setPopularItems] = useState([]);
+  const [popularItemsFull, setPopularItemsFull] = useState([]);
+  const [popularLimit, setPopularLimit] = useState(5); // allow configuring how many popular items to show
 
   useEffect(() => {
     if (activeView === "analytics") {
@@ -58,15 +60,20 @@ const AdminDashboard = () => {
         }
       });
 
-      // Convert to array and sort
+      // Convert to array and sort (keep full array; UI will pick top-N or all)
       const popularItemsArray = Object.entries(itemSalesMap)
         .map(([name, sales]) => ({ name, sales }))
-        .sort((a, b) => b.sales - a.sales)
-        .slice(0, 5);
+        .sort((a, b) => b.sales - a.sales);
 
-      // Calculate percentages for chart
-      const maxSales = popularItemsArray[0]?.sales || 1;
-      const itemsWithPercentage = popularItemsArray.map(item => ({
+      // Save full sorted list; UI decides how many to display
+      setPopularItemsFull(popularItemsArray);
+
+      // By default show the configured top-N (popularLimit)
+      const toDisplay = popularLimit === 'ALL' ? popularItemsArray : popularItemsArray.slice(0, Number(popularLimit));
+
+      // Calculate percentages for chart based on displayed items
+      const maxSales = toDisplay[0]?.sales || 1;
+      const itemsWithPercentage = toDisplay.map(item => ({
         ...item,
         percentage: Math.round((item.sales / maxSales) * 100),
       }));
@@ -100,7 +107,7 @@ const AdminDashboard = () => {
         },
       });
 
-      setPopularItems(itemsWithPercentage);
+  setPopularItems(itemsWithPercentage);
     } catch (error) {
       console.error("Error fetching analytics data:", error);
       alert("Failed to load analytics data");
@@ -113,6 +120,18 @@ const AdminDashboard = () => {
     localStorage.clear();
     navigate("/");
   };
+
+  // Recompute displayed popular items when full list or limit changes
+  useEffect(() => {
+    if (!popularItemsFull || popularItemsFull.length === 0) return;
+    const toDisplay = popularLimit === 'ALL' ? popularItemsFull : popularItemsFull.slice(0, Number(popularLimit));
+    const maxSales = toDisplay[0]?.sales || 1;
+    const itemsWithPercentage = toDisplay.map(item => ({
+      ...item,
+      percentage: Math.round((item.sales / maxSales) * 100),
+    }));
+    setPopularItems(itemsWithPercentage);
+  }, [popularLimit, popularItemsFull]);
 
   return (
     <div className="admin-dashboard">
@@ -255,7 +274,21 @@ const AdminDashboard = () => {
 
             {/* Charts */}
             <div className="chart-container">
-              <h3>Popular Menu Items - Sales Performance</h3>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <h3 style={{ margin: 0 }}>Popular Menu Items - Sales Performance</h3>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <label style={{ fontSize: '0.9rem', color: '#555' }}>Show:</label>
+                        <select value={popularLimit} onChange={(e) => {
+                          const v = e.target.value;
+                          setPopularLimit(v === 'ALL' ? 'ALL' : Number(v));
+                        }} style={{ padding: '6px 10px', borderRadius: 6 }}>
+                          <option value={5}>Top 5</option>
+                          <option value={10}>Top 10</option>
+                          <option value={20}>Top 20</option>
+                          <option value={'ALL'}>All</option>
+                        </select>
+                      </div>
+                    </div>
               {popularItems.length === 0 ? (
                 <div className="no-chart-data">
                   <p>📊 No sales data available yet</p>

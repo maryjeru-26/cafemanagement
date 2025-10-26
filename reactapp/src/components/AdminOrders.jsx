@@ -5,6 +5,7 @@ import { apiGet, apiDelete, apiPut } from "../utils/api";
 const AdminOrders = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [expandedOrders, setExpandedOrders] = useState({});
   const [sortBy, setSortBy] = useState("orderDate");
   const [sortDirection, setSortDirection] = useState("desc");
   const [filterStatus, setFilterStatus] = useState("ALL");
@@ -149,7 +150,8 @@ const AdminOrders = () => {
           </thead>
           <tbody>
             {filteredOrders.map((order) => (
-              <tr key={order.id}>
+              <React.Fragment key={order.id}>
+              <tr>
                 <td>{order.id}</td>
                 <td>{order.user?.id || order.userId}</td>
                 <td>
@@ -181,9 +183,49 @@ const AdminOrders = () => {
                     >
                       Delete
                     </button>
+                    <button
+                      className="btn-view-items"
+                      onClick={() => setExpandedOrders(prev => ({ ...prev, [order.id]: !prev[order.id] }))}
+                    >
+                      {expandedOrders[order.id] ? 'Hide Items' : 'View Items'}
+                    </button>
                   </div>
                 </td>
               </tr>
+              {/* expanded items row */}
+              {expandedOrders[order.id] && (
+                <tr className="order-items-row" key={`${order.id}-items`}>
+                  <td colSpan={6}>
+                    {order.items && order.items.length > 0 ? (
+                      <table className="items-table">
+                        <thead>
+                          <tr>
+                            <th>Item ID</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Available</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {order.items.map((it) => ( 
+                            <tr key={it.id}>
+                              <td>{it.id}</td>
+                              <td>{it.itemName}</td>
+                              <td>{it.category}</td>
+                              <td>₹{it.price}</td>
+                              <td>{it.available ? 'Yes' : 'No'}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    ) : (
+                      <div className="empty-items">No items for this order.</div>
+                    )}
+                  </td>
+                </tr>
+              )}
+              </React.Fragment>
             ))}
           </tbody>
         </table>
